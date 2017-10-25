@@ -1,0 +1,291 @@
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #FFFFFF;
+	background: #1E1E24;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 400px auto 128px;
+	grid-template-areas: 
+		"header"
+		"main"
+		"footer";
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.flex {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+	display: flex;
+		-webkit-flex-direction: column;
+	flex-direction: column;
+		-webkit-align-items: center;
+	align-items: center;
+}
+
+/*------------------------------
+Header, Main and Footer
+--------------------------------*/
+
+header, footer {
+	text-align: center;	
+		-webkit-justify-content: center;
+	justify-content: center;
+}
+
+header {
+	grid-area: header;
+	padding: 0 16px;
+}
+
+main {
+	grid-area: main;
+}
+
+footer {
+	grid-area: footer; 
+	padding: 0 16px;
+}
+
+h1, h2, h3 {
+	width: 100%;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	padding: 20px 0;
+	font-size: 36px;
+	font-family: 'Expletus Sans', sans-serif;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+h3 {
+	margin: auto;
+	font-size: 36px;
+	text-align: center;
+	font-weight: normal;
+	color: #1E1E24;
+}
+
+button {
+	width: 100%;
+	height: 60px;
+	margin-top: 24px;
+	line-height: 60px;
+	padding: 0 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	color: #424242;
+	background: #DEA54B;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.block-3 button {
+	width: 80%;
+	height: 48px;
+	line-height: 48px;
+	font-size: 18px;
+	color: #FFFFFF;
+	background: #1E1E24;
+}
+
+button:hover {
+	color: #FFFFFF;
+	background: #5398BE;
+}
+
+button:active {
+	background: #2e5368;
+}
+
+/*---------------------
+Blocks
+----------------------*/
+
+.block-container {
+	width: 100%;
+	display: grid;
+	grid-gap: 12px;
+	grid-template-columns: repeat (4, 1fr);
+	grid-template-rows: 80px minmax(300px, auto) 80px;
+	grid-template-areas: 
+		"one two four five"
+		"three three three three"
+		"six seven eight nine";
+}
+
+.block-1 {
+	grid-area: one;
+	background: #FB9F89 url("img/condo1.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.block-2 {
+	grid-area: two;
+	background: #DEA54B url("img/condo2.jpg") center center no-repeat;
+}
+
+.block-3 {
+	grid-area: three;
+	padding: 32px 16px;
+	background: #F2CD5D;
+}
+
+.block-4 {
+	grid-area: four;
+	background: #5398BE url("img/condo4.jpg") center center no-repeat;
+}
+
+.block-5 {
+	grid-area: five;
+	background: #FB9F89 url("img/condo5.jpg") center center no-repeat;
+}
+
+.block-6 {
+	grid-area: six;
+	background: #5398BE url("img/condo6.jpg") center center no-repeat;
+}
+
+.block-7 {
+	grid-area: seven;
+	background: #DEA54B url("img/condo7.jpg") center center no-repeat;
+}
+
+.block-8 {
+	grid-area: eight;
+	background: #DEA54B url("img/condo8.jpg") center center no-repeat;
+}
+
+.block-9 {
+	grid-area: nine;
+	background: #FB9F89 url("img/condo9.jpg") center center no-repeat;
+}
+
+.block-1, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9 {
+	background-size: cover;
+}
+
+.display-none {
+	display: none;
+}
+
+/*-------------------------
+Media Queries
+-------------------------*/
+
+@media screen and (min-width: 768px) {
+	
+	body {
+		grid-template-rows: 540px 1fr 120px;
+	}
+	
+	h1 {
+		padding: 32px 0;
+		font-size: 60px;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+
+	h3 {
+		font-size: 48px;
+	}
+
+	button {
+		width: 360px;
+		border-radius: 6px;
+	}
+	
+	.block-3 {
+		padding: 40px 24px;
+	}
+
+	.block-3 button {
+		width: 70%;
+		margin-bottom: 24px;
+	}
+	
+	.block-container {
+		max-width: 768px;
+		margin: 0 auto;
+		grid-gap: 12px;
+		grid-template-columns: 1fr 1fr 4fr repeat(5, 1fr);
+		grid-template-rows: 96px 180px 180px 96px;
+		grid-template-areas: 
+			"one one one one one four four four"
+			"two two three three three three seven seven"
+			"six six three three three three seven seven"
+			"five five five eight eight eight nine nine";
+	}
+		
+}
+
+@media screen and (min-width: 960px) {
+	
+	.block-container {
+		max-width: 960px;
+		grid-template-columns: 1fr 1fr 2fr 2fr repeat(4, 1fr);
+		grid-template-areas: 
+			"one one three three three four four seven"
+			"two two three three three nine nine seven"
+			"two two three three three nine nine seven"
+			"five five five eight eight eight eight eight";
+	}
+
+}
+
+@media screen and (min-width: 1280px) {
+	
+	.block-container {
+		max-width: 1280px;
+		grid-template-columns: repeat(4, 1fr) 6fr repeat(3, 1fr);
+		grid-template-areas: 
+			"one one two two three four four four"
+			"one one two two three eight seven seven"
+			"six six six six three eight nine nine"
+			"five five five five three eight nine nine";
+	}
+	
+	.block-3 button {
+		width: 240px;
+		margin-bottom: 40px;
+	}
+	
+}
+
+@media screen and (min-width: 1600px) {
+	
+	.block-container {
+		max-width: 1600px;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: 96px 360px 180px 96px;
+		grid-template-areas: 
+			"one one two two two four four four"
+			"one one three three three three eight nine"
+			"five five six six six seven seven nine"
+			"five five six six six seven seven nine";
+	}
+	
+}
