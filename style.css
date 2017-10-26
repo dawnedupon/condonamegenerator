@@ -288,4 +288,8 @@ Media Queries
 			"five five six six six seven seven nine";
 	}
 	
+	.block-3 {
+		padding: 40px 64px;
+	}
+	
 }
