@@ -81,6 +81,7 @@ h3 {
 	text-align: center;
 	font-weight: normal;
 	color: #1E1E24;
+	text-transform: capitalize;
 }
 
 button {
